@@ -1,0 +1,11 @@
+h1{color: chocolate;font-family: serif; background-color: rgba(231, 229, 241, 0.237);;; ;}
+.align {text-align: center;
+font-weight: 300;}
+body {background:linear-gradient(to right white blue );}
+ body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #cbe681, #7a7ace);
+      margin: 0;
+      padding: 0;
+    }
+    ul+li{color: darksalmon;}
