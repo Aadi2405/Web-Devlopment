@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Survey Form</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #a2d4ec, #84fab0);
+      color: #333;
+    }
+
+    h1, #description {
+      text-align: center;
+      color: #222;
+    }
+
+    form {
+      background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+      max-width: 650px;
+      margin: 50px auto;
+      padding: 35px 40px;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      border: 2px solid #ffb347;
+      /* Added a colored border and gradient background for more color */
+    }
+
+    label {
+      display: block;
+      margin: 12px 0 6px;
+      font-weight: 600;
+      color: #ff6600;
+      /* Orange color for labels */
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 18px;
+      border: 1px solid #ffb347;
+      border-radius: 8px;
+      font-size: 15px;
+      background-color: #fffbe7;
+      /* Light yellow background for inputs */
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: #ff6600;
+      outline: none;
+      background-color: #fff3e0;
+      /* Orange border and lighter background on focus */
+    }
+
+    .radio-group p, .checkbox-group p {
+      margin: 18px 0 8px;
+      font-weight: 600;
+    }
+
+    .radio-group label,
+    .checkbox-group label {
+      display: block;
+      margin-bottom: 10px;
+      color: #444;
+      font-weight: 500;
+    }
+
+    button {
+      background: linear-gradient(90deg, #ffb347 0%, #ffcc33 100%);
+      color: #fff;
+      padding: 14px 28px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 2px 8px rgba(12, 12, 12, 0.2);
+    }
+
+    button:hover {
+      background: linear-gradient(90deg, #8aa9c7 0%, #675742 100%);
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 600px) {
+      form {
+        margin: 20px;
+        padding: 25px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="title">Survey Form</h1>
+  <p id="description">Please fill out this short survey to help us understand your preferences.</p>
+
+  <form id="survey-form">
+
+    <!-- Name -->
+    <label id="name-label" for="name">Name</label>
+    <input 
+      type="text" 
+      id="name" 
+      name="name" 
+      placeholder="Enter your full name" 
+      required
+    />
+
+    <!-- Email -->
+    <label id="email-label" for="email">Email</label>
+    <input 
+      type="email" 
+      id="email" 
+      name="email" 
+      placeholder="Enter a valid email" 
+      required
+    />
+
+    <!-- Number -->
+    <label id="number-label" for="number">Age</label>
+    <input 
+      type="number" 
+      id="number" 
+      name="age" 
+      min="10" 
+      max="120" 
+      placeholder="Enter your age (10-120)" 
+      required
+    />
+
+    <!-- Dropdown -->
+    <label for="dropdown">Which option best describes your role?</label>
+    <select id="dropdown" name="role" required>
+      <option value="">-- Select a role --</option>
+      <option value="student">Student</option>
+      <option value="professional">Professional</option>
+    </select>
+
+    <!-- Radio buttons -->
+    <div class="radio-group">
+      <p>Would you recommend this survey to others?</p>
+      <label><input type="radio" name="recommend" value="yes" required> Yes</label>
+      <label><input type="radio" name="recommend" value="no"> No</label>
+    </div>
+
+    <!-- Checkboxes -->
+    <div class="checkbox-group">
+      <p>What topics are you interested in? (Select all that apply)</p>
+      <label><input type="checkbox" name="topics" value="html"> HTML</label>
+      <label><input type="checkbox" name="topics" value="css"> CSS</label>
+      <label><input type="checkbox" name="topics" value="javascript"> JavaScript</label>
+    </div>
+
+    <!-- Textarea -->
+    <label for="comments">Additional Comments</label>
+    <textarea 
+      id="comments" 
+      name="comments" 
+      rows="4" 
+      placeholder="Enter your feedback here..."
+    ></textarea>
+
+    <!-- Submit button -->
+    <button type="submit" id="submit">Submit</button>
+
+  </form>
+
+</body>
+</html>

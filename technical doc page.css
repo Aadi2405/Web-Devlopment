@@ -1,0 +1,139 @@
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.7;
+  background: linear-gradient(to right, #f5f7fa, #ebf5fb);
+  color: #2c3e50;
+}
+
+/* Navbar */
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 260px;
+  height: 100%;
+  background: linear-gradient(160deg, #2c3e50, #34495e);
+  color: #fff;
+  padding: 25px 20px;
+  overflow-y: auto;
+  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.15);
+  transition: background 0.3s ease;
+}
+
+#navbar header {
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  font-weight: bold;
+  color: #00d2ff;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+}
+
+.nav-link {
+  display: block;
+  color: #e0f7fa;
+  text-decoration: none;
+  padding: 10px 0;
+  font-size: 1.1rem;
+  border-left: 4px solid transparent;
+  transition: all 0.25s ease;
+}
+
+.nav-link:hover {
+  background-color: #3b4a59;
+  color: #ffffff;
+  border-left: 4px solid #00d2ff;
+  padding-left: 12px;
+}
+
+/* Main Documentation */
+#main-doc {
+  margin-left: 280px;
+  padding: 50px 40px;
+  max-width: 900px;
+  animation: fadeIn 0.6s ease-in;
+}
+
+.main-section {
+  margin-bottom: 60px;
+  padding: 25px 30px;
+  background-color: #ffffff;
+  border-left: 5px solid #00d2ff;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.main-section:hover {
+  transform: translateY(-5px);
+}
+
+.main-section header {
+  font-size: 1.7rem;
+  color: #007BFF;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 6px;
+}
+
+/* Paragraphs & Lists */
+p {
+  font-size: 1.05rem;
+  margin-bottom: 12px;
+}
+
+ul {
+  margin-top: 10px;
+  padding-left: 20px;
+  color: #34495e;
+}
+
+li {
+  margin: 8px 0;
+}
+
+/* Code Blocks */
+code {
+  background-color: #f4f4f4;
+  color: #c7254e;
+  padding: 6px 12px;
+  border-radius: 6px;
+  display: inline-block;
+  margin: 8px 0;
+  font-family: 'Courier New', monospace;
+  font-size: 0.95rem;
+  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.06);
+}
+
+/* Animation */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  #navbar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    box-shadow: none;
+    padding: 15px;
+    text-align: center;
+  }
+
+  #main-doc {
+    margin-left: 0;
+    padding: 25px 20px;
+  }
+
+  .nav-link {
+    padding: 8px 0;
+    font-size: 1rem;
+  }
+}

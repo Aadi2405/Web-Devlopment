@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Technical Documentation</title>
+  <link rel="stylesheet" href="technical doc page.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    #navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 250px;
+      height: 100%;
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      overflow-y: auto;
+    }
+
+    #navbar header {
+      font-size: 1.5em;
+      margin-bottom: 20px;
+    }
+
+    .nav-link {
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      padding: 8px 0;
+    }
+
+    .nav-link:hover {
+      background-color: #444;
+    }
+
+    #main-doc {
+      margin-left: 270px;
+      padding: 20px;
+    }
+
+    .main-section {
+      margin-bottom: 40px;
+    }
+
+    code {
+      background-color: #f4f4f4;
+      padding: 2px 6px;
+      border-radius: 4px;
+      display: inline-block;
+      margin: 4px 0;
+    }
+
+    @media screen and (max-width: 768px) {
+      #navbar {
+        position: relative;
+        width: 100%;
+        height: auto;
+      }
+
+      #main-doc {
+        margin-left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="navbar">
+    <header>Web Dev Docs</header>
+    <a class="nav-link" href="#Introduction">Introduction</a>
+    <a class="nav-link" href="#HTML_Basics">HTML Basics</a>
+    <a class="nav-link" href="#CSS_Styling">CSS Styling</a>
+    <a class="nav-link" href="#JavaScript_Intro">JavaScript Intro</a>
+    <a class="nav-link" href="#Responsive_Design">Responsive Design</a>
+  </nav>
+
+  <main id="main-doc">
+    <section class="main-section" id="Introduction">
+      <header>Introduction</header>
+      <p>This documentation introduces you to basic web development concepts.</p>
+      <p>You will learn HTML, CSS, and JavaScript from scratch.</p>
+      <code>console.log("Welcome to Web Development!");</code>
+      <p>Follow each section to build your knowledge.</p>
+      <ul>
+        <li>HTML Basics</li>
+        <li>CSS Styling</li>
+        <li>JavaScript</li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="HTML_Basics">
+      <header>HTML Basics</header>
+      <p>HTML is the structure of web pages.</p>
+      <p>It uses tags like &lt;h1&gt;, &lt;p&gt;, and &lt;div&gt; to define elements.</p>
+      <code>&lt;h1&gt;Hello World&lt;/h1&gt;</code>
+      <code>&lt;p&gt;This is a paragraph.&lt;/p&gt;</code>
+      <p>HTML is not case sensitive but follows conventions.</p>
+      <ul>
+        <li>Headings</li>
+        <li>Paragraphs</li>
+        <li>Links</li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="CSS_Styling">
+      <header>CSS Styling</header>
+      <p>CSS makes your website look better.</p>
+      <p>Use selectors to apply styles to HTML elements.</p>
+      <code>p { color: blue; }</code>
+      <p>Stylesheets can be internal or external.</p>
+      <code>.container { margin: 20px; }</code>
+      <ul>
+        <li>Colors</li>
+        <li>Fonts</li>
+        <li>Spacing</li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="JavaScript_Intro">
+      <header>JavaScript Intro</header>
+      <p>JavaScript adds interactivity to websites.</p>
+      <p>You can respond to user actions like clicks and input.</p>
+      <code>document.getElementById("btn").addEventListener("click", myFunction);</code>
+      <p>JavaScript can also change the HTML content dynamically.</p>
+      <code>element.innerHTML = "Hello!";</code>
+      <ul>
+        <li>Variables</li>
+        <li>Functions</li>
+        <li>DOM Manipulation</li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="Responsive_Design">
+      <header>Responsive Design</header>
+      <p>Responsive design helps your site work on all devices.</p>
+      <p>Use CSS media queries to adjust layout based on screen size.</p>
+      <code>@media (max-width: 600px) { body { font-size: 14px; } }</code>
+      <p>It ensures good user experience everywhere.</p>
+      <code>.flex-container { display: flex; flex-wrap: wrap; }</code>
+      <ul>
+        <li>Media Queries</li>
+        <li>Flexible Layouts</li>
+        <li>Mobile-first Design</li>
+      </ul>
+    </section>
+  </main>
+
+</body>
+</html>
