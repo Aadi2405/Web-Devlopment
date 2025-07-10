@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Payment Form</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #e1dae9, #7ea8f1);
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 25px;
+      background-color: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    h1, h2 {
+      text-align: center;
+      color: #2c3e50;
+    }
+
+    form p, form fieldset {
+      margin-bottom: 15px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    input[type="date"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-sizing: border-box;
+      background-color: #f9f9f9;
+      transition: border 0.3s;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: #6a11cb;
+      outline: none;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    fieldset {
+      border: 2px solid #6a11cb;
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    legend {
+      font-weight: bold;
+      color: #6a11cb;
+    }
+
+    .gender-options {
+      display: flex;
+      gap: 30px;
+      margin-top: 10px;
+    }
+
+    .gender-options label {
+      background-color: #ecf0f1;
+      padding: 10px 20px;
+      border-radius: 6px;
+      transition: background-color 0.3s, transform 0.2s;
+      cursor: pointer;
+    }
+
+    .gender-options label:hover {
+      background-color: #dfe6e9;
+      transform: scale(1.02);
+    }
+
+    input[type="radio"] {
+      margin-right: 8px;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      color: #34495e;
+      font-weight: 500;
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      background: linear-gradient(to right, #00b09b, #96c93d);
+      color: white;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.4s ease;
+    }
+
+    input[type="submit"]:hover {
+      background: linear-gradient(to right, #28a745, #a1e044);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <form action="">
+      <h1>Registration Form</h1>
+
+      <h2>Contact Info</h2>
+
+      <label for="name">Name</label>
+      <input type="text" name="name" id="name" required />
+
+      <fieldset>
+        <legend>Gender</legend>
+        <div class="gender-options">
+          <label><input type="radio" name="gender" value="male" /> Male</label>
+          <label><input type="radio" name="gender" value="female" /> Female</label>
+        </div>
+      </fieldset>
+
+      <label for="address">Address</label>
+      <textarea name="address" id="address" cols="50" rows="4"></textarea>
+
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" required />
+
+      <label for="pincode">Pincode</label>
+      <input type="number" name="pincode" id="pincode" />
+<br>
+  <br>
+  <h2>Work Experince</h2>
+  <textarea name="work expirences" id="work expirences" cols="50" rows="4"></textarea>
+   
+    <h2>intrests and hobbies</h2>   
+    <textarea name="intrests and hobbies" id="intrests and hobbies" cols="50" rows="4"></textarea> 
+    <h2>reason for applying</h2>
+    <textarea name="reason" id="reason" cols="50" rows="4"></textarea> 
+    <input type="submit" value="Pay Now" />
+    </form>
+  </div>
+</body>
+</html>
