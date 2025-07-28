@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Box Model Demonstration</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f5f7fa;
+      padding: 40px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    .box-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 500px;
+    }
+
+    .margin-box {
+      background-color: #e0f7fa;
+      padding: 50px;
+      margin: 20px;
+    }
+
+    .border-box {
+      border: 5px solid #00acc1;
+      padding: 30px;
+      background-color: #b2ebf2;
+    }
+
+    .padding-box {
+      padding: 20px;
+      background-color: #4dd0e1;
+    }
+
+    .content-box {
+      background-color: #006064;
+      color: white;
+      padding: 10px;
+    }
+
+    .label {
+      margin-top: 10px;
+      font-size: 14px;
+      font-weight: bold;
+      color: #555;
+    }
+
+    .legend {
+      margin-top: 50px;
+    }
+
+    .legend div {
+      display: inline-block;
+      margin: 0 15px;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    .m { background-color: #e0f7fa; }
+    .b { background-color: #b2ebf2; }
+    .p { background-color: #4dd0e1; color: #fff; }
+    .c { background-color: #006064; color: #fff; }
+  </style>
+</head>
+<body>
+
+  <h1>CSS Box Model Demonstration</h1>
+
+  <div class="box-wrapper">
+    <div class="margin-box">
+      <div class="border-box">
+        <div class="padding-box">
+          <div class="content-box">
+            Content Area
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="legend">
+    <div class="m">Margin</div>
+    <div class="b">Border</div>
+    <div class="p">Padding</div>
+    <div class="c">Content</div>
+  </div>
+
+</body>
+</html>
