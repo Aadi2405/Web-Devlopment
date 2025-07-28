@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Clock & To-Do App</title>
+  <style>
+    :root {
+      --accent: #00d1b2;
+      --text-light: #ffffff;
+      --glass-bg: rgba(255, 255, 255, 0.15);
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: var(--text-light);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+      min-height: 100vh;
+    }
+
+    .clock {
+      font-size: 3rem;
+      background: var(--glass-bg);
+      color: #fff;
+      padding: 1rem 2rem;
+      border-radius: 12px;
+      margin-bottom: 3rem;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      letter-spacing: 2px;
+    }
+
+    .todo-app {
+      background: var(--glass-bg);
+      backdrop-filter: blur(10px);
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .todo-app h2 {
+      margin-top: 0;
+      color: #fff;
+    }
+
+    .input-group {
+      display: flex;
+      margin-bottom: 1rem;
+    }
+
+    .input-group input {
+      flex: 1;
+      padding: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px 0 0 8px;
+      outline: none;
+    }
+
+    .input-group button {
+      padding: 10px 20px;
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 0 8px 8px 0;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .input-group button:hover {
+      background: #00bfa6;
+    }
+
+    ul.todo-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    ul.todo-list li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 12px;
+      margin: 6px 0;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      color: white;
+    }
+
+    ul.todo-list li.completed {
+      text-decoration: line-through;
+      opacity: 0.6;
+    }
+
+    ul.todo-list li .actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .filters {
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+      gap: 10px;
+    }
+
+    .filters button {
+      padding: 6px 12px;
+      border: none;
+      border-radius: 6px;
+      background: #444;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .filters button.active {
+      background: var(--accent);
+      color: white;
+    }
+
+    .checkmark {
+      cursor: pointer;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .checkmark:hover {
+      transform: scale(1.2);
+    }
+
+    .delete-btn {
+      background: transparent;
+      border: none;
+      color: #f44336;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    ::placeholder {
+      color: #bbb;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="clock" id="clock">00:00:00</div>
+
+  <div class="todo-app">
+    <h2>📝 To-Do List</h2>
+    <div class="input-group">
+      <input type="text" id="todo-input" placeholder="Add a new task...">
+      <button onclick="addTask()">Add</button>
+    </div>
+    <ul class="todo-list" id="todo-list"></ul>
+    <div class="filters">
+      <button onclick="setFilter('all')" class="active">All</button>
+      <button onclick="setFilter('completed')">Completed</button>
+      <button onclick="setFilter('pending')">Pending</button>
+    </div>
+  </div>
+
+  <script>
+    // CLOCK
+    function updateClock() {
+      const now = new Date();
+      const time = now.toLocaleTimeString();
+      document.getElementById('clock').textContent = time;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    // TODO APP
+    let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    let currentFilter = 'all';
+
+    function saveTasks() {
+      localStorage.setItem('tasks', JSON.stringify(tasks));
+    }
+
+    function renderTasks() {
+      const list = document.getElementById('todo-list');
+      list.innerHTML = '';
+      tasks
+        .filter(task => {
+          if (currentFilter === 'all') return true;
+          if (currentFilter === 'completed') return task.done;
+          if (currentFilter === 'pending') return !task.done;
+        })
+        .forEach((task, index) => {
+          const li = document.createElement('li');
+          if (task.done) li.classList.add('completed');
+          li.innerHTML = `
+            <span class="checkmark" onclick="toggleTask(${index})">
+              ${task.done ? '✅' : '⬜'}
+            </span>
+            <span style="flex: 1; margin-left: 10px;">${task.text}</span>
+            <div class="actions">
+              <button class="delete-btn" onclick="deleteTask(${index})">🗑️</button>
+            </div>
+          `;
+          list.appendChild(li);
+        });
+    }
+
+    function addTask() {
+      const input = document.getElementById('todo-input');
+      const text = input.value.trim();
+      if (text) {
+        tasks.push({ text, done: false });
+        input.value = '';
+        saveTasks();
+        renderTasks();
+      }
+    }
+
+    function toggleTask(index) {
+      tasks[index].done = !tasks[index].done;
+      saveTasks();
+      renderTasks();
+    }
+
+    function deleteTask(index) {
+      tasks.splice(index, 1);
+      saveTasks();
+      renderTasks();
+    }
+
+    function setFilter(filter) {
+      currentFilter = filter;
+      document.querySelectorAll('.filters button').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      renderTasks();
+    }
+
+    renderTasks();
+  </script>
+</body>
+</html>
