@@ -1,0 +1,281 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  color: #222;
+  background-color: #f4f6f9;
+  line-height: 1.6;
+}
+
+/* Container */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Header */
+.header-top {
+  background: linear-gradient(90deg, #003366, #004080);
+  padding: 20px 0;
+  color: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.logo {
+  height: 80px;
+}
+
+.header-text h1 {
+  font-size: 1.8rem;
+  color: #ffffff;
+}
+
+.header-text p {
+  font-size: 1rem;
+  color: #cccccc;
+}
+
+/* Navigation */
+.main-nav {
+  background-color: #002244;
+  padding: 10px 0;
+}
+
+.main-nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.main-nav li {
+  margin: 0 15px;
+}
+
+.main-nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+
+.main-nav a:hover {
+  background-color: #ffcc00;
+  color: #002244;
+}
+
+/* Hero */
+.hero {
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.6)
+    ),
+    url('https://www.gtbit.ac.in/sites/default/files/banner/1.jpg') center/cover no-repeat;
+  height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.hero-content h2 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+}
+
+/* Sections */
+.info-section {
+  padding: 60px 0;
+  background-color: #ffffff;
+}
+
+.info-section.alt {
+  background: linear-gradient(90deg, #f0f4f8, #e2ecf6);
+}
+
+.info-section h2 {
+  color: #003366;
+  font-size: 1.9rem;
+  margin-bottom: 15px;
+  border-left: 5px solid #ffcc00;
+  padding-left: 12px;
+}
+
+.info-section p {
+  font-size: 1.05rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.info-section ul {
+  padding-left: 20px;
+  list-style-type: disc;
+  color: #444;
+}
+
+.info-section ul li {
+  margin-bottom: 10px;
+}
+
+/* News & Events */
+.news-events {
+  background-color: #fdfdfd;
+  padding: 50px 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.news, .events {
+  width: 45%;
+}
+
+.news h3, .events h3 {
+  color: #003366;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #003366;
+  padding-bottom: 6px;
+}
+
+.news ul, .events ul {
+  list-style: none;
+}
+
+.news li::before, .events li::before {
+  content: "• ";
+  color: #ff6600;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+}
+
+/* Gallery Grid */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 3px solid #ddd;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+  border-color: #003366;
+}
+
+/* Footer */
+.footer {
+  background: linear-gradient(90deg, #002244, #001122);
+  color: white;
+  text-align: center;
+  padding: 25px 10px;
+  font-size: 0.95rem;
+  margin-top: 40px;
+  box-shadow: inset 0 1px 10px rgba(0, 0, 0, 0.3);
+}
+/* Responsive Design */
+@media (max-width: 992px) {
+  .header-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .news-events {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .news, .events {
+    width: 100%;
+  }
+
+  .hero-content h2 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .info-section ul {
+    padding-left: 18px;
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
+/* AOS Animation */
+/* Responsive Layout Enhancements */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .hero-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .news-events {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .news, .events {
+    width: 100%;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
