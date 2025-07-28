@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Responsive Photo Gallery</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f5f5;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #333;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      color: #222;
+      font-size: 1.2rem;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 15px;
+      line-height: 1.4;
+    }
+
+    .card button {
+      padding: 10px 20px;
+      background: linear-gradient(135deg, #007BFF, #00BFFF);
+      border: none;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .card button:hover {
+      background: linear-gradient(135deg, #0056b3, #009ac7);
+    }
+
+    @media (max-width: 600px) {
+      .card img {
+        height: 160px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Photo Gallery</h1>
+  <div class="gallery">
+    <div class="card">
+      <img src="https://th.bing.com/th/id/R.783f7ea1ca692cbe5d76e3e93fb9733c?rik=2iYI%2f8gAq%2fHEvQ&riu=http%3a%2f%2fs1.picswalls.com%2fwallpapers%2f2016%2f03%2f29%2fbeautiful-nature-hd_04232357_304.jpg&ehk=BrzZ%2fimO%2bx8y9uJHNXRHof8cjIxNObl9FQgD5NV%2fjh8%3d&risl=&pid=ImgRaw&r=0" alt="Nature">
+      <div class="card-content">
+        <h3>Beautiful Nature</h3>
+        <p>Discover the calming beauty of untouched landscapes and natural wonders.</p>
+        <button>Read More</button>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://anjahome.com/wp-content/uploads/2021/06/travel-journal-inspiration.jpg" alt="Travel">
+      <div class="card-content">
+        <h3>Travel Diaries</h3>
+        <p>Explore the most fascinating destinations and cultures around the world.</p>
+        <button>Read More</button>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://wallpaperaccess.com/full/2325624.jpg" alt="City">
+      <div class="card-content">
+        <h3>City Life</h3>
+        <p>Dive into the fast-paced and vibrant life of metropolitan cities.</p>
+        <button>Read More</button>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://tse3.mm.bing.net/th/id/OIP.jFTJoSeob3JF5BDTEjKm-QHaLH?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Food">
+      <div class="card-content">
+        <h3>Delicious Bites</h3>
+        <p>Satisfy your cravings with some of the world’s tastiest dishes and treats.</p>
+        <button>Read More</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
